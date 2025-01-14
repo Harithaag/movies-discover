@@ -10,7 +10,7 @@ import MovieDetails from 'components/MovieDetails';
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename="/movies-discover">
         <Header />
         <div style={{ marginTop: '64px' }}> 
           <Routes>
