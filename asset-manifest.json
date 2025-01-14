@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/movies-discover/static/css/main.1b4fbabb.css",
+    "main.js": "/movies-discover/static/js/main.1d2172ee.js",
+    "index.html": "/movies-discover/index.html",
+    "main.1b4fbabb.css.map": "/movies-discover/static/css/main.1b4fbabb.css.map",
+    "main.1d2172ee.js.map": "/movies-discover/static/js/main.1d2172ee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b4fbabb.css",
+    "static/js/main.1d2172ee.js"
+  ]
+}
