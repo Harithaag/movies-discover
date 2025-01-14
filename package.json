@@ -2,6 +2,7 @@
   "name": "movies-discover",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://678610a0d13151d53ea7e00a--elaborate-maamoul-26f97c.netlify.app/",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.14.0",
