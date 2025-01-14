@@ -36,6 +36,7 @@ const Movies: React.FC = () => {
   const { movies, hasMore, loading } = useSelector((state: RootState) => state.movies);
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchQueryDebounced, setSearchQueryDebounced] = useState("");
   const [selectedGenre, setSelectedGenre] = useState<number | string | null>(null);
   const [selectedYear, setSelectedYear] = useState<string>("");
   const [ratingRange, setRatingRange] = useState<[number, number]>([0, 10]);
@@ -90,11 +91,16 @@ const Movies: React.FC = () => {
 
   const handleSearchChange = useCallback(
     debounce((value: string) => {
-      setSearchQuery(value);
+      setSearchQueryDebounced(value);
       setPage(1);
     }, 300),
     []
   );
+
+  const handleInputChange = (value: string) => {
+    setSearchQuery(value);
+    handleSearchChange(value);
+  };
 
   const handleScroll = useCallback(() => {
     if (
@@ -114,6 +120,7 @@ const Movies: React.FC = () => {
 
   const handleClearSearch = useCallback(() => {
     setSearchQuery("");
+    setSearchQueryDebounced("");
     setPage(1);
     setSelectedGenre(null);
     setSelectedYear("");
@@ -217,7 +224,8 @@ const Movies: React.FC = () => {
             <TextField
               label="Search Movies"
               variant="outlined"
-              onChange={(e) => handleSearchChange(e.target.value)}
+              value={searchQuery}
+              onChange={(e) => handleInputChange(e.target.value)}
               fullWidth
               InputProps={{
                 placeholder: "Type to search...",

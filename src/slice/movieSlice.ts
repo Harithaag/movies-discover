@@ -14,8 +14,12 @@ export const fetchMovies = createAsyncThunk(
   async ({ page, searchQuery, selectedGenre, selectedYear, ratingRange }: any) => {
     const [minRating, maxRating] = ratingRange;
     let url;
-    if (searchQuery || selectedGenre || selectedYear || minRating !== 0 || maxRating !== 10) {
+    if (searchQuery && selectedGenre == null && selectedYear == "" && minRating == 0 && maxRating == 10) {
+      url = `${TMDB_BASE_URL}/search/movie?api_key=${TMDB_API_KEY}&page=${page}`;
+      url += `&query=${searchQuery}`;
+    } else if (selectedGenre || selectedYear || minRating !== 0 || maxRating !== 10) {
       url = `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&page=${page}`;
+
       if (searchQuery) {
         url += `&query=${searchQuery}`;
       }
