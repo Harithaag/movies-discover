@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/movies-discover/static/css/main.1b4fbabb.css",
-    "main.js": "/movies-discover/static/js/main.358be1f6.js",
+    "main.js": "/movies-discover/static/js/main.0ff924df.js",
     "index.html": "/movies-discover/index.html",
     "main.1b4fbabb.css.map": "/movies-discover/static/css/main.1b4fbabb.css.map",
-    "main.358be1f6.js.map": "/movies-discover/static/js/main.358be1f6.js.map"
+    "main.0ff924df.js.map": "/movies-discover/static/js/main.0ff924df.js.map"
   },
   "entrypoints": [
     "static/css/main.1b4fbabb.css",
-    "static/js/main.358be1f6.js"
+    "static/js/main.0ff924df.js"
   ]
 }
